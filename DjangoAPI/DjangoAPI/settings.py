@@ -39,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api',
+    'corsheaders',
+
 
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,6 +56,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'DjangoAPI.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    "https://editor.swagger.io",  # Replace with your Swagger UI origin
+]
 
 TEMPLATES = [
     {
